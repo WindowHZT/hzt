@@ -9,6 +9,6 @@ git clone https://github.com/WindowHZT/hzt
 
 cd hzt
 
-bash install.sh
+bash ./Install.sh
 
 关闭termux后，重新打开输入命令 hzt 即可奔放～
