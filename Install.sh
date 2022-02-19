@@ -19,6 +19,7 @@ sleep 1
 echo -e "\n\n$blue准备几秒后开始！，请保持网络流畅，需要一些流量(10-20M)来更新，(下载不动的建议挂VPN)$white"
 sleep 1
 echo -e "\n\n$blue开始！$white\n\n"
+sleep 3
 pkg install git -y
 apt update 
 apt upgrade -y
@@ -43,6 +44,7 @@ echo 'NodeJsCode_path="/data/data/com.termux/files/home/storage/shared/Code/Node
 echo -e  "\n\n"  >> "$home_path"config.ini
 echo '##Java，Python，C，C++，JavaScript编译器的目录' >> "$home_path"config.ini
 echo 'bin_path="/data/data/com.termux/files/usr/bin/"' >> "$home_path"config.ini
+
 find $home_path"config.ini" >/dev/null 2>&1
 if [ "$?" != "0" ];then
 	echo -e "\n\n$red配置出错！请重试$white"
@@ -53,6 +55,8 @@ if [ "$?" != "0" ];then
 	echo -e "\n\n$red配置出错！请重试$white"
 	exit
 fi
+
+
 echo -e "\n\n$red配置完成！$white"
 sleep 1
 echo -e "\n\n$green 10s后脚本会自动清除屏幕and退出，请耐心等待……"
