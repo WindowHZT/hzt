@@ -23,7 +23,11 @@ sleep 3
 Path=$(dirname $0)
 cp $Path/hzt $bin_path
 chmod 776 "$bin_path"hzt
-unzip -d "$storage_path"Code $Path/Code.zip
+if [ -a "$storage_path"Code" ]
+	echo ""
+else
+	unzip -d "$storage_path"Code $Path/Code.zip
+fi
 echo "##Java代码文件所在的目录" > "$home_path"config.ini
 echo 'JavaCode_path="/data/data/com.termux/files/home/storage/shared/Code/JavaCode/"' >> "$home_path"config.ini
 echo -e "\n\n"  >> "$home_path"config.ini
