@@ -21,6 +21,11 @@ sleep 1
 echo -e "\n\n$blue开始！$white\n\n"
 sleep 3
 Path=$(dirname $0)
+
+pkg install screenfetch -y
+pkg install fortune -y
+pkg install cowsay -y
+
 cp $Path/hzt $bin_path
 chmod 776 "$bin_path"hzt
 if [ -a ""$storage_path"Code" ];then
