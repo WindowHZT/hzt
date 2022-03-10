@@ -16,7 +16,7 @@ echo -e "\n\n$red请手动输入Y，并按回车确认，即可继续安装$whit
 sleep 1
 echo -e "\n\n$red记住了吗？$white"
 sleep 1
-echo -e "\n\n$blue准备几秒后开始！，请保持网络流畅，需要一些流量(10-20M)来更新，(下载不动的建议挂VPN)$white"
+echo -e "\n\n$blue准备几秒后开始！，请保持网络流畅，需要一些流量(10-20M)来更新，(下载不动的建议挂科学上网)$white"
 sleep 1
 echo -e "\n\n$blue开始！$white\n\n"
 sleep 3
