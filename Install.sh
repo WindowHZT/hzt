@@ -20,9 +20,6 @@ echo -e "\n\n$blue准备几秒后开始！，请保持网络流畅，需要一�
 sleep 1
 echo -e "\n\n$blue开始！$white\n\n"
 sleep 3
-pkg install git -y
-apt update 
-apt upgrade -y
 Path=$(dirname $0)
 cp $Path/hzt $bin_path
 chmod 776 "$bin_path"hzt
