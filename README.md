@@ -8,7 +8,7 @@
 
 一、然后打开termux依次输入以下命令：
 
-pkg upgrade
+pkg upgrade -y
 
 pkg install git
 
