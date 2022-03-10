@@ -23,7 +23,7 @@ sleep 3
 Path=$(dirname $0)
 cp $Path/hzt $bin_path
 chmod 776 "$bin_path"hzt
-if [ -a "$storage_path"Code" ]
+if [ -a ""$storage_path"Code" ];then
 	echo ""
 else
 	unzip -d "$storage_path"Code $Path/Code.zip
