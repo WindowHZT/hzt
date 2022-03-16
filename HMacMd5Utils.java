@@ -1,4 +1,4 @@
-package org.lionsoul.ip2region.test;
+//package org.lionsoul.ip2region.test;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
