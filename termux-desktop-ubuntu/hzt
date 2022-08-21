@@ -12,10 +12,40 @@ case $* in
 "1")
 	##把火狐更到最新版
 	apt update && apt grade
-	apt install gnupg gnupg2 gnupg1 sudo software-properties-common plank -y
+	apt install gnupg gnupg2 gnupg1 sudo software-properties-common plank firefox -y
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F	
 	sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
 	sudo apt update
+	
+	##创建火狐桌面快捷方式
+	text=(
+	'[Desktop Entry]'
+	'Name=firefox'
+	'Comment=firefox'
+	'Exec=/usr/lib/firefox/firefox'
+	'Icon=/usr/lib/firefox/browser/chrome/icons/default/default128.png'
+	'Terminal=false'
+	'Type=Application'
+	'Categories=Application;'
+	'Encoding=UTF-8'
+	'StartupNotify=true'
+	)
+	rm -rf ~/firefox.desktop
+	for x in $(seq 0 $((${#text[*]}-1)))
+	do
+		echo "${text[$x]}" >> ~/firefox.desktop
+	done
+	text=(
+	'[PlankDockItemPreferences]'
+	'Launcher=file:///root/firefox.desktop'
+	)
+	mkdir -p ~/.config/plank/dock1/launchers/
+	rm -rf ~/.config/plank/dock1/launchers/firefox.dockitem
+	for x in $(seq 0 $((${#text[*]}-1)))
+	do
+		echo "${text[$x]}" >> ~/.config/plank/dock1/launchers/firefox.dockitem
+	done
+
 ;;
 "2")
 	##配置plank，并启动
