@@ -12,7 +12,7 @@ case $* in
 "1")
 	##把火狐更到最新版
 	apt update && apt grade
-	apt install gnupg gnupg2 gnupg1 sudo software-properties-common firefox plank -y
+	apt install gnupg gnupg2 gnupg1 sudo software-properties-common plank -y
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F	
 	sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
 	sudo apt update
