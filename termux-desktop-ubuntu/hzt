@@ -1,1 +1,36 @@
-test
+#字体颜色
+red="\e[31;1m"      #红
+green="\e[32;1m"   #绿
+yellow="\e[33;1m"  #黄
+blue="\e[34;1m"    #蓝
+purple="\e[35;1m"    #紫红
+cyanine="\e[36;1m"    #青蓝
+white="\e[0m"
+
+msg() { echo -e "\n\t\t$blue[*]$white$1$2$white\n" ;:;}  ##自定义通告颜色
+case $* in
+"1")
+	##把火狐更到最新版
+	apt update && apt grade
+	apt install gnupg gnupg2 gnupg1 sudo software-properties-common firefox plank -y
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F	
+	sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
+	sudo apt update
+;;
+"2")
+	##配置plank，并启动
+	rm -rf ~/nohup.out
+	if [ -z "$(command -v plank)" ];then
+		sudo apt install plank
+	fi
+	export DISPLAY=:1
+	nohup plank & 
+	clear
+	msg $red "开机成功！欢迎～～"
+	bash --login
+;;
+"3")
+	bash --login
+;;
+esac
+
