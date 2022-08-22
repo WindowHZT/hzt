@@ -14,8 +14,8 @@ case $* in
 	apt update && apt upgrade
 	apt purge firefox -y
 	apt install gnupg gnupg2 gnupg1 sudo software-properties-common plank -y
-	#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F	
-	#sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F	
+	sudo apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main"
 	sudo apt update
 	sudo apt install firefox -y
 	
